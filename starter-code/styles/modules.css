@@ -2,6 +2,10 @@
   background: #FFEAAA;
 }
 
+.clearfix {
+  clear: both;
+}
+
 /* DONE: Float the main header to the left, to make room for the
     hamburger menu. */
 .heading-group-h1 {
@@ -13,10 +17,18 @@
   /* TODO: Add styles for the icon-menu class (whether it be the
       hamburger font icon or an image of your choosing). It should be
       bigger, and off to the right. */
+      display: inline-block;
+      float: right;
+      transform: scale(2.5);
+      margin-top: 1%;
+      margin-right: 2%;
 }
 
 .main-nav {
   padding: 0.1em;
+  position: relative;
+  top: -10px;
+  left: -5px;
 }
 
 .main-nav ul {
@@ -66,3 +78,34 @@
          - The main-nav should be all on one row, with padding spaced better
            for a larger screen.
 */
+
+@media screen and (min-width: 480px) {
+  .site-header {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .heading-group-h1 {
+    max-width: 100%;
+    float: none;
+  }
+
+  .icon-menu {
+    display: none;
+  }
+
+  .main-nav {
+    display: inline-block;
+  }
+  .main-nav ul {
+    /*display: inline-block;*/
+    display: flex;
+    justify-content: space-between;
+    /*float: right;*/
+  }
+  .main-nav:hover ul {
+    /*display: inline-block;*/
+    display: flex;
+    justify-content: space-between;
+  }
+}
